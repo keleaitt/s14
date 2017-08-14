@@ -10,12 +10,13 @@ def fib(max):
 
             a, b = b, a + b
 
-            print(a)
+            yield a
 
             n += 1
         else:
             break
 
+f = fib(10)
 
-
-fib(10)
+for i in range(10):
+    print(f.__next__())
